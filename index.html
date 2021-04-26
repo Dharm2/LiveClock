@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Time Clock</title>
+
+    <!-- CSS Program -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        /* background: url(images/1.jpg);
+        background-size: cover;
+        /*background-color: teal;*/
+        /* background: url(images/1.jpg);*/
+        /*background-image: url(images/1.jpg);
+       background-attachment: fixed;
+       background-origin: border-box;
+       animation: backchange 50s;
+       animation-iteration-count: infinite;*/
+      }
+
+      .main-container {
+        width: 100%;
+        height: 100vh;
+        /*background: url(images/1.jpg);*/
+        /* Copied from animation */
+        background-size: 100%;
+        object-fit: auto;
+        /* background-position: center center;*/
+        animation: backchange 50s;
+        animation-iteration-count: infinite;
+        transition: 500ms;
+      }
+
+      .image {
+        width: 100%;
+        height: auto;
+        background-size: 100%;
+        position: relative;
+        z-index: 1;
+        /*background-attachment: fixed;
+        scroll-behavior: smooth;*/
+        /* background: url(images/1.jpg);*/
+      }
+
+      /* ANIMATION */
+
+      @keyframes backchange {
+        0% {
+          /*background-image: url(images/1.jpg);
+          background-size: cover;*/
+          background: crimson;
+        }
+        15% {
+          /*background-image: url(images/2.jpg);*/
+           background-size: 100%;          
+          background-position: left top;
+          background: orangered;
+        }
+        30% {
+          /*background-image: url(images/beach.jpg);*/
+          background-size: 100%;
+          background-position: center;
+          background: orange;
+        }
+        45% {
+          /*background-image: url(images/billboard.jpg);*/
+          background-size: 100%;
+          background-position: center;
+          background: paleturquoise;
+        }
+        60% {
+         /* background-image: url(images/5.jpg);*/
+          background-size: 100%;
+          background-position: left top;
+          background: peru;
+        }
+        75% {
+          /*background-image: url(images/6.jpg);*/
+          background-size: 100%;
+          background-position: left top;
+          background: teal;
+        }
+        90% {
+          /*background-image: url(images/7.jpg); */
+          background-size: 100%;
+          background-position: left top;
+          background: tomato;
+        }
+      }
+
+      /* .image img{
+          width: 100%;
+          height: auto;
+          background: url(images/1.jpg);
+      }*/
+
+      .clock {
+        font-family: "Montserrat", sans-serif;
+      }
+
+      h1 {
+        width: 100%;
+        margin-top: 15%;
+        position: absolute;
+        font-size: 8vw;
+        font-weight: bold;
+        text-align: center;
+        color: whitesmoke;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: 5px;
+        z-index: 2;
+        /*background: black;*/
+        display: inline-block;
+      }
+
+      #clock {
+        width: 100%;
+        position: absolute;
+        font-size: 9vw;
+        color: whitesmoke;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        margin-top: 25%;
+        z-index: 3;
+      }
+
+      #author {
+        width: 100%;
+        margin-top: 45%;
+        color: white;
+        font-family: sans-serif;
+        font-size: 20px;
+        position: absolute;
+        z-index: 4;
+        text-align: center;
+      }
+
+      ::selection {
+        background: white;
+        color: black;
+        opacity: 0.85;
+      }
+      span {
+        color: black;
+        background: white;
+      }
+      span::selection {
+        background: black;
+        color: white;
+      }
+      @media only screen and (max-width: 600px) {
+        html,
+        body {
+          /*background:tomato;*/
+          /* animation: backchange_mobile 50s;
+              animation-iteration-count: infinite;*/
+        }
+        .main-container {
+          animation: backchange_mobile 50s;
+        }
+        @keyframes backchange_mobile {
+        0% {
+          /*background-image: url(images/1.jpg);
+          background-size: cover;*/
+          background: crimson;
+        }
+        15% {
+          /*background-image: url(images/2.jpg);*/
+           background-size: 100%;          
+          background-position: left top;
+          background: orangered;
+        }
+        30% {
+          /*background-image: url(images/beach.jpg);*/
+          background-size: 100%;
+          background-position: center;
+          background: orange;
+        }
+        45% {
+          /*background-image: url(images/billboard.jpg);*/
+          background-size: 100%;
+          background-position: center;
+          background: paleturquoise;
+        }
+        60% {
+         /* background-image: url(images/5.jpg);*/
+          background-size: 100%;
+          background-position: left top;
+          background: peru;
+        }
+        75% {
+          /*background-image: url(images/6.jpg);*/
+          background-size: 100%;
+          background-position: left top;
+          background: teal;
+        }
+        90% {
+          /*background-image: url(images/7.jpg); */
+          background-size: 100%;
+          background-position: left top;
+          background: tomato;
+        }
+      }
+        /*@keyframes backchange_mobile {
+          0% {
+            background: url(images/1.jpg);
+            object-fit: contain;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /*background-position: left top;*
+          }
+          15% {
+            background: url(images/2.jpg);
+            background-size: contain;
+            object-fit: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+           /* background-position: left top;*
+          }
+          30% {
+            background: url(images/beach.jpg);
+            background-size: contain;
+            object-fit: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /*background-position: bottom;*
+          }
+          45% {
+            background: url(images/billboard.jpg);
+            background-size: contain;
+            object-fit: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+           /* background-position: bottom;*
+          }
+          60% {
+            background: url(images/5.jpg);
+            background-size: fixed;
+            object-fit: contain;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+           /* background-position: left top;*
+          }
+          75% {
+            background: url(images/6.jpg);
+            background-size: fixed;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+           /* background-position: left top;*
+          }
+          90% {
+            background: url(images/7.jpg);
+            background-size: 100vw 100vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /*background-position: left top;
+          }
+        }*/
+        h1 {
+          /*width: 100%;
+          margin-top: 15%;
+          position: absolute;
+          font-size: 8vw;
+          font-weight: bold;
+          text-align: center;
+          color: whitesmoke;
+          font-family: 'Montserrat', sans-serif;
+          letter-spacing: 5px;
+          z-index: 2;
+          /*background: black;
+          display: inline-block;*/
+          width: 100%;
+          margin-top: 35%;
+          position: absolute;
+          font-size: 13vw;
+        }
+        #clock {
+          /* width: 100%;
+          position: absolute;
+          font-size: 9vw;
+          color: whitesmoke;
+          text-align: center;
+          font-family: 'Roboto', sans-serif;
+          margin-top: 25%;
+          z-index: 3;*/
+          font-size: 13vw;
+          margin-top: 55%;
+        }
+        #author {
+          font-size: 15px;
+          margin-top: 175%;
+          color: white;
+          font-family: sans-serif;
+        }
+      }
+    </style>
+  </head>
+  <body onload="realtimeClock()">
+    <div class="main-container">
+      <h1>Cl<span>oc</span>k</h1>
+      <div id="clock"></div>
+      <p id="author">by Dharm Bharodiya</p>
+      <div class="image">
+        <!--<img src="images/1.jpg" class="img-background" />-->
+      </div>
+    </div>
+
+    <!-- JavaScript Program -->
+
+    <script>
+      //defining function
+      function realtimeClock() {
+        var rtClock = new Date();
+
+        var hours = rtClock.getHours();
+        var minutes = rtClock.getMinutes();
+        var seconds = rtClock.getSeconds();
+
+        //Add PM and AM time functions
+        var amPm = hours < 12 ? "AM" : "PM";
+
+        //Convert Hours to 12 hour format
+        hours = hours > 12 ? hours - 12 : hours;
+
+        //Hours, minutes and seconds with zero
+        hours = ("0" + hours).slice(-2);
+        minutes = ("0" + minutes).slice(-2);
+        seconds = ("0" + seconds).slice(-2);
+
+        //Display the Clock
+        //Main Function
+        document.getElementById("clock").innerHTML =
+          hours + " : " + minutes + " : " + seconds + " " + amPm;
+        var t = setTimeout(realtimeClock, 500);
+      }
+
+      //END
+    </script>
+  </body>
+</html>
